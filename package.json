@@ -1,0 +1,34 @@
+{
+  "name": "postapl",
+  "version": "0.1.0",
+  "description": "Tool for transforming APL with JS plugins",
+  "engines": {
+    "node": "^10 || ^12 || >=14"
+  },
+  "main": "./lib/index.js",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "lib/"
+  ],
+  "keywords": [
+    "apl",
+    "postapl",
+    "processor",
+    "preprocessor",
+    "transform",
+    "manipulation",
+    "transpiler"
+  ],
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Mark Tucker",
+  "license": "MIT",
+  "dependencies": {
+    "json-ast": "^2.1.7"
+  },
+  "devDependencies": {
+    "jest": "^27.2.5"
+  }
+}

@@ -1,0 +1,9 @@
+node_modules/
+
+.editorconfig
+coverage/
+test/
+.travis.yml
+
+docs/
+.github/
