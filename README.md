@@ -47,7 +47,7 @@ You can start using PostAPL in just two steps:
 For other environments, you can use the JS API:
 
 ```js
-const postapl = require('postapl');
+const { postapl } = require('postapl');
 const removeEmpty = require('postapl-removeempty');
 const fs = require('fs');
 
