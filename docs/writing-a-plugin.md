@@ -80,6 +80,7 @@ This tree contains the following types of nodes:
   //JsonDocument
   type: 'document'
   parent: null
+  path: ''
   markDelete: boolean
   child: JsonObject | JsonArray
   comments: [JsonComment]
@@ -94,6 +95,7 @@ This tree contains the following types of nodes:
   //JsonObject
   type: 'object'
   parent: JsonDocument | JsonArray | JsonProperty
+  path: string
   markDelete: boolean
   properties: [JsonProperty]
   comments: [JsonComment]
@@ -110,6 +112,7 @@ This tree contains the following types of nodes:
   //JsonArray
   type: 'array'
   parent: any
+  path: string
   markDelete: boolean
   items: [JsonArray | JsonObject | JsonString | JsonNumber | JsonTrue | JsonFalse | JsonNull]
   comments: [JsonComment]
@@ -125,6 +128,7 @@ This tree contains the following types of nodes:
   //JsonProperty
   type: 'property'
   parent: any
+  path: string
   markDelete: boolean
   key: JsonKey
   value: JsonObject | JsonArray | JsonString | JsonNumber | JsonTrue | JsonFalse | JsonNull
@@ -139,6 +143,7 @@ This tree contains the following types of nodes:
   //JsonString
   type: 'string'
   parent: any
+  path: string
   markDelete: boolean
   value: string
 
@@ -152,6 +157,7 @@ This tree contains the following types of nodes:
   //JsonNumber
   type: 'number'
   parent: any
+  path: string
   markDelete: boolean
   value: number
 
@@ -165,6 +171,7 @@ This tree contains the following types of nodes:
   //JsonTrue
   type: 'true'
   parent: any
+  path: string
   markDelete: boolean
   value: true
 
@@ -178,6 +185,7 @@ This tree contains the following types of nodes:
   //JsonFalse
   type: 'false'
   parent: any
+  path: string
   markDelete: boolean
   value: false
 
@@ -191,6 +199,7 @@ This tree contains the following types of nodes:
   //JsonNull
   type: 'null'
   parent: any
+  path: string
   markDelete: boolean
   value: null
 
@@ -204,6 +213,7 @@ This tree contains the following types of nodes:
   //JsonKey
   type: 'key'
   parent: any
+  path: string
   markDelete: boolean
   value: string
 
@@ -217,6 +227,7 @@ This tree contains the following types of nodes:
   //JsonValue
   type: 'value'
   parent: any
+  path: string
   markDelete: boolean
   value: string | number | boolean | null
 
@@ -230,6 +241,7 @@ This tree contains the following types of nodes:
   //JsonComment
   type: 'comment'
   parent: JsonDocument | JsonObject | JsonArray
+  path: string
   markDelete: boolean
   value: string
 
@@ -239,13 +251,6 @@ This tree contains the following types of nodes:
 
 ### PluginTools
 The [`pluginTools`] module has functions to help you navigate the AST or perform condition checks:
-
-* `getNodePath(node)` - given an AST node, get the JSON path that would lead you to that object. The path is in the form of `import.0.name` which contains property names and array index numbers.
-
-  - node - the AST node to find the path to
-
-
-  NOTE: Each call to getNodePath walks the tree from parent to parent to calculate the path. Store the path in a variable if you need to access it multiple times.
 
 * `pathStartsWith(path, searchString)` - given a JSON path, check if it starts with a string.
   - path - JSON path for the AST node
@@ -259,7 +264,7 @@ The [`pluginTools`] module has functions to help you navigate the AST or perform
   - path - JSON path for the AST node
   - searchString - the string to search for
 
-* `findNode(node, path)` - given a JSON path, find the AST node that matches it.
+* `findNode(node, path)` - given a JSON path, find the AST node that matches it. Each AST node has a `path` property.
   - node - the node to start the search
   - path - the JSON Path in the form of `import.0.name`
 
@@ -426,6 +431,7 @@ class MyVisitor extends Visitor {
       type: 'info',
       key: 'comment',
       value: commentNode.value,
+      path: commentNode.path,
       plugin: this.pluginName
     });
   }
@@ -482,15 +488,13 @@ class MyVisitor extends Visitor {
 
 Part of nagivating nodes (especially when using a visitor) is to check if a node matches certain conditions.
 
-Use `getNodePath(node)` along with `pathStartsWith(path, searchString)`, `pathEndsWith(path, searchString)`, `pathContains(path, searchString)`, or other functions from pluginTools.
+Use a node's `path` property along with `pathStartsWith(path, searchString)`, `pathEndsWith(path, searchString)`, `pathContains(path, searchString)`, or other functions from pluginTools.
 
 This finds all resources that are colors:
 
 ```js
 property(propertyNode) {
-  const path = pluginTools.getNodePath(propertyNode);
-
-  if (pluginTools.pathStartsWith(path, 'resources.colors')) {
+  if (pluginTools.pathStartsWith(propertyNode.path, 'resources.colors')) {
     const key = propertyNode.key.value;
     const value = propertyNode.value.value;
     // process each color resource

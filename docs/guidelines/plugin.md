@@ -97,9 +97,8 @@ If you have an error because of input APL you should use `node.error` to create 
 
 ```js
 object(objectNode) {
-  const path = pluginTools.getNodePath(objectNode);
   if (condition) {
-    throw objectNode.error('Error x for ' + path)
+    throw objectNode.error('Error x for ' + objectNode.path)
   }
 }
 ```
@@ -112,9 +111,8 @@ because some PostAPL runner may not allow console output.
 
 ```js
 object(objectNode) {
-  const path = pluginTools.getNodePath(objectNode);
   if (condition) {
-    this.result.warn(`Some warning at path: ${path}`, {node: objectNode});
+    this.result.warn(`Some warning at path: ${objectNode.path}`, {node: objectNode});
   }
 }
 ```
