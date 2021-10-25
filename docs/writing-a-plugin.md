@@ -12,7 +12,7 @@ Support:
 * [Mark Tucker](https://twitter.com/marktucker)
 
 
-## Step 1: Create an idea
+## Step 1: Think of an idea
 
 There are many reasons for writing a new PostAPL plugin:
 
@@ -93,7 +93,7 @@ This tree contains the following types of nodes:
   ```js
   //JsonObject
   type: 'object'
-  parent: any
+  parent: JsonDocument | JsonArray | JsonProperty
   markDelete: boolean
   properties: [JsonProperty]
   comments: [JsonComment]
@@ -281,7 +281,7 @@ The [`pluginTools`] module has functions to help you navigate the AST or perform
 * `getResources(node)` - check if the node is a JsonString and returns an array that contains resources.
   - node - the node to check
 
-[`pluginTools`]: postapl/blob/main/lib/pluginTools.js
+[`pluginTools`]: https://github.com/postapl/postapl/blob/main/lib/pluginTools.js
 
 
 ## Step 4: Find nodes

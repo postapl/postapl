@@ -32,8 +32,7 @@ Plugin name will be used in error messages and warnings.
 module.exports = opts => {
   return {
     postaplPlugin: 'postapl-name',
-    Once (root) {
-      // Plugin code
+    async process(result) {
     }
   }
 }

@@ -28,9 +28,9 @@ If you have any new ideas, [PostAPL plugin development] is really easy.
 
 ### General
 
-* [postapl-removeempty](https://github.com/postapl/postapl-removeempty) finds properties whose values are null, empty string, empty array, or empty object and removes them.
+* [postapl-remove-empty](https://github.com/postapl/postapl-remove-empty) finds properties whose values are null, empty string, empty array, or empty object and removes them.
 
-[PostAPL plugin development]:   https://github.com/postcss/postcss/blob/main/docs/writing-a-plugin.md
+[PostAPL plugin development]:   https://github.com/postapl/postapl/blob/main/docs/writing-a-plugin.md
 
 
 ## Usage
