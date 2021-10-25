@@ -1,0 +1,36 @@
+// Comment
+{
+  "type": "APL",
+  "version": "1.7",
+  "settings": {},
+  "theme": "dark",
+  "import": [],
+  "resources": [],
+  "styles": {},
+  "onMount": [],
+  "graphics": {},
+  "commands": {},
+  "layouts": {},
+  "mainTemplate": {
+    "parameters": [
+      "payload"
+    ],
+    "items": [
+      {
+        "type": "Container",
+        "width": "100vw",
+        "height": "100vh",
+        "data": [],
+        "items": [
+          {
+            "type": "Frame",
+            "backgroundColor": "white",
+            "height": "100%",
+            "width": "100%",
+            "item": {}
+          }
+        ]
+      }
+    ]
+  }
+}
