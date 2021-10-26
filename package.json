@@ -25,6 +25,7 @@
   },
   "author": "Mark Tucker",
   "license": "MIT",
+  "repository": "postapl/postapl",
   "dependencies": {
     "json-ast": "^2.1.7"
   },
