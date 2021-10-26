@@ -13,7 +13,7 @@ Here are a list of plugs that support PostAPL. Your plugins are welcome.
 
 This collection of plugins do not transform the APL in any way, but instead analyze and report on it.
 
-* [`postapl-mermain-graph`] creates graph data for [Mermaid Live Editor] of the Component tree of your APL or of the AST.
+* [`postapl-mermaid-graph`] creates graph data for [Mermaid Live Editor] of the Component tree of your APL or of the AST.
 
 [Mermaid Live Editor]: https://mermaid.live
-[`postapl-mermain-graph`]: https://github.com/postapl/postapl-mermain-graph/
+[`postapl-mermain-graph`]: https://github.com/postapl/postapl-mermaid-graph/
