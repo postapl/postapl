@@ -44,7 +44,7 @@ module.exports.postapl = true
 
 ### 2.1. Plugin must be tested
 
-A CI service like [Travis] is also recommended for testing code in
+A CI service like [Travis] is also recommended (but not required) for testing code in
 different environments. You should test in (at least) Node.js [active LTS](https://github.com/nodejs/LTS) and current stable version.
 
 [Travis]: https://travis-ci.org/

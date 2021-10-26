@@ -104,6 +104,8 @@ This tree contains the following types of nodes:
   error(message, opts)
   hasProperty(propName)
   setProperty(key, value)
+  getProperty(propName)
+  removeProperty(propName)
   ```
 
 * `JsonArray`: represents an array.
@@ -120,6 +122,7 @@ This tree contains the following types of nodes:
   accept(visitor)
   error(message, opts)
   addItem(value)
+  removeItem(indexToDelete)
   ```
 
 * `JsonProperty`: represents a property.
