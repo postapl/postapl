@@ -33,6 +33,14 @@ If you have any new ideas, [PostAPL plugin development] is really easy.
 [PostAPL plugin development]:   https://github.com/postapl/postapl/blob/main/docs/writing-a-plugin.md
 
 
+### Reporters
+
+* [postapl-mermaid-graph] creates graph data for [Mermaid Live Editor] of the Component tree of your APL or of the AST.
+
+[Mermaid Live Editor]: https://mermaid.live
+[postapl-mermaid-graph]: https://github.com/postapl/postapl-mermaid-graph/
+
+
 ## Usage
 
 You can start using PostAPL in just two steps:
