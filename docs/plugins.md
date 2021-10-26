@@ -16,4 +16,4 @@ This collection of plugins do not transform the APL in any way, but instead anal
 * [`postapl-mermaid-graph`] creates graph data for [Mermaid Live Editor] of the Component tree of your APL or of the AST.
 
 [Mermaid Live Editor]: https://mermaid.live
-[`postapl-mermain-graph`]: https://github.com/postapl/postapl-mermaid-graph/
+[`postapl-mermaid-graph`]: https://github.com/postapl/postapl-mermaid-graph/
